@@ -27,7 +27,7 @@ const Navbar = () => {
                 >
                     <MonitorSmartphone className="mr-2 transition-transform duration-300 group-hover:rotate-12 group-hover:scale-125" />
                     <span>
-                        Kevin<span className="text-accent transition-colors duration-300">Dev</span>
+                        Kevin<span className="text-accent transition-colors duration-300">PEKPELI</span>
                     </span>
                 </a>
 

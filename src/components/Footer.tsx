@@ -8,7 +8,7 @@ const Footer = () => {
                 <MonitorSmartphone className="w-10 h-10" />
                 <p className="font-bold">
                     KEVIN
-                    <span className="text-accent">DEV</span>
+                    <span className="text-accent">PEKPELI</span>
                 </p>
                 <p>Copyright © {new Date().getFullYear()} -  Tous droits réservés</p>
             </aside>
