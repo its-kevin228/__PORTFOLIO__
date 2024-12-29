@@ -16,9 +16,9 @@ const Home = () => {
                     utilisant Laravel, React, Next, Express, <br /> et Node.js. Contactez-moi si vous avez besoin
                     de mes services.
                 </p>
-                <a href="" className=" btn btn-accent md:w-fit">
+                <a href="https://mail.google.com" className=" btn btn-accent md:w-fit">
                     <Mail className="w-5 h-5" />
-                    Contactez-moi
+                    Contactez-moi <span className="btn-accent">pekpelignimdoukevin@gmail.com</span>
                 </a>
 
             </div>
