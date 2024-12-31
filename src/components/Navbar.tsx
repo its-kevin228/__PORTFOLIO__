@@ -1,9 +1,10 @@
 import { MonitorSmartphone, Menu, X, Home, Info, Briefcase, Code } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [scrolling, setScrolling] = useState(false);
 
     const menuVariants = {
         open: { opacity: 1, y: 0 },
@@ -17,10 +18,32 @@ const Navbar = () => {
         { id: "Technologies", label: "Technologies", icon: <Code className="w-4 h-4 mr-2" /> },
     ];
 
+    // Suivi du défilement de la page
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 50) {
+                setScrolling(true); 
+            } else {
+                setScrolling(false); 
+            }
+        };
+
+        window.addEventListener("scroll", handleScroll);
+
+        // Nettoyage de l'événement lors de la destruction du composant
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
+
     return (
-        <div className="bg-base-300 shadow-lg sticky top-0 z-50">
+        <div
+            className={`bg-base-300 shadow-lg fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out ${
+                scrolling ? "bg-opacity-50" : "bg-opacity-100"
+            }`}
+        >
             <div className="flex justify-between items-center p-4 max-w-7xl mx-auto">
-                {/* Logo */}
+                
                 <a
                     href="#"
                     className="flex items-center text-2xl font-bold md:text-xl group"
@@ -31,7 +54,7 @@ const Navbar = () => {
                     </span>
                 </a>
 
-                {/* Desktop Navigation */}
+               
                 <ul className="hidden md:flex space-x-6">
                     {navItems.map((item) => (
                         <li key={item.id}>
@@ -46,7 +69,6 @@ const Navbar = () => {
                     ))}
                 </ul>
 
-                {/* Mobile Menu Button */}
                 <button
                     className="md:hidden"
                     onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -59,7 +81,7 @@ const Navbar = () => {
                 </button>
             </div>
 
-            {/* Mobile Navigation */}
+           
             {isMenuOpen && (
                 <motion.ul
                     className="md:hidden bg-base-100 p-6 space-y-4 shadow-lg absolute w-full left-0 top-full"
