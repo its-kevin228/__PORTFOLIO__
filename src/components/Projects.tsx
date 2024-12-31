@@ -19,7 +19,7 @@ const projects = [
     },
     {
         id: 2,
-        title: 'Plateforme de gestion de budgets',
+        title: 'Plateforme de gestion de budgets(toujours en developpement)',
         description: "Une plateforme robuste pour Gerer vos dépenses en toutes simplicité.",
         technologies: ['Next.js', 'TypeScript', 'Prisma'],
         repoLink: 'https://github.com/its-kevin228/MoneyMap',
@@ -29,7 +29,7 @@ const projects = [
         id: 3,
         title: 'Portfolio interactif',
         description: 'Un portfolio moderne et interactif pour présenter mes projets et compétences.',
-        technologies: ['HTML', 'CSS', 'JavaScript'],
+        technologies: ['React', 'Typscript', 'Tailwind CSS'],
         repoLink: 'https://github.com/its-kevin228/__PORTFOLIO__',
         image: img3,
     },
