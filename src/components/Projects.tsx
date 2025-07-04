@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import Title from "./Title";
 import { motion } from "framer-motion";
 import { Github, ExternalLink, Calendar, Star } from "lucide-react";

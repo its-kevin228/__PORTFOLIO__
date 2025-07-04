@@ -140,7 +140,7 @@ const Technologies = () => {
             opacity: 0,
             rotateY: 180
         },
-        visible: (custom) => ({
+        visible: (custom: number) => ({
             scale: 1,
             opacity: 1,
             rotateY: 0,

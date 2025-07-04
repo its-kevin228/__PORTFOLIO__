@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import Title from "./Title";
 import img from "../assets/img.jpg";
 import { Component, SendToBack, Code, Smartphone, Database, Globe, Award, Target, Zap, Heart, Star, TrendingUp } from "lucide-react";

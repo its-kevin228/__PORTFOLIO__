@@ -1,4 +1,6 @@
-import { Mail, Download, Github, Linkedin, Code, Sparkles, ArrowDown, Play, ExternalLink } from "lucide-react";
+/* eslint-disable react-hooks/exhaustive-deps */
+ 
+import { Mail, Download, Sparkles, ArrowDown, ExternalLink, Github, Linkedin } from "lucide-react";
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import img from '../assets/img.jpg';
