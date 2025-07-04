@@ -7,18 +7,18 @@ export const measurePerformance = (name: string, fn: () => void) => {
   console.log(`${name} took ${end - start} milliseconds`);
 };
 
-export const debounce = <T extends (...args: any[]) => any>(
+export const debounce = <T extends (...args: unknown[]) => unknown>(
   func: T,
   wait: number
 ): ((...args: Parameters<T>) => void) => {
-  let timeout: NodeJS.Timeout;
+  let timeout: number;
   return (...args: Parameters<T>) => {
     clearTimeout(timeout);
-    timeout = setTimeout(() => func(...args), wait);
+    timeout = window.setTimeout(() => func(...args), wait);
   };
 };
 
-export const throttle = <T extends (...args: any[]) => any>(
+export const throttle = <T extends (...args: unknown[]) => unknown>(
   func: T,
   limit: number
 ): ((...args: Parameters<T>) => void) => {
@@ -54,16 +54,45 @@ export const preloadImage = (src: string): Promise<void> => {
   });
 };
 
-// Web Vitals tracking
-export const trackWebVitals = () => {
-  if ('web-vital' in window) {
-    // Track Core Web Vitals if available
-    import('web-vitals').then(({ getCLS, getFID, getFCP, getLCP, getTTFB }) => {
-      getCLS(console.log);
-      getFID(console.log);
-      getFCP(console.log);
-      getLCP(console.log);
-      getTTFB(console.log);
-    });
+// Web Vitals tracking (optional)
+export const trackWebVitals = async () => {
+  try {
+    // Dynamic import to avoid build errors if web-vitals is not installed
+    const webVitals = await import('web-vitals').catch(() => null);
+    
+    if (webVitals) {
+      const { onCLS, onINP, onFCP, onLCP, onTTFB } = webVitals;
+      onCLS(console.log);
+      onINP(console.log);  // Replaced onFID with onINP
+      onFCP(console.log);
+      onLCP(console.log);
+      onTTFB(console.log);
+    } else {
+      console.log('Web Vitals not available');
+    }
+  } catch (error) {
+    console.log('Web Vitals tracking failed:', error);
   }
+};
+
+// Simple performance metrics
+export const getPerformanceMetrics = () => {
+  if (typeof window !== 'undefined' && 'performance' in window) {
+    const navigation = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
+    
+    return {
+      // Time to first byte
+      ttfb: navigation.responseStart - navigation.requestStart,
+      // DOM content loaded
+      domContentLoaded: navigation.domContentLoadedEventEnd - navigation.domContentLoadedEventStart,
+      // Load complete
+      loadComplete: navigation.loadEventEnd - navigation.loadEventStart,
+      // First paint (if available)
+      firstPaint: performance.getEntriesByName('first-paint')[0]?.startTime || 0,
+      // First contentful paint (if available)
+      firstContentfulPaint: performance.getEntriesByName('first-contentful-paint')[0]?.startTime || 0,
+    };
+  }
+  
+  return null;
 };

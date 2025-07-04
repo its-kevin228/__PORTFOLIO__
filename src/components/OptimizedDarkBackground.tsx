@@ -14,13 +14,13 @@ const OptimizedDarkBackground = () => {
     }, []);
 
     useEffect(() => {
-        let timeoutId: NodeJS.Timeout;
+        let timeoutId: number;
         
         const throttledMouseMove = (e: MouseEvent) => {
             if (timeoutId) return;
-            timeoutId = setTimeout(() => {
+            timeoutId = window.setTimeout(() => {
                 handleMouseMove(e);
-                timeoutId = null as any;
+                timeoutId = 0;
             }, 16); // ~60fps
         };
 
