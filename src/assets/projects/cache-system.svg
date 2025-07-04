@@ -1,0 +1,41 @@
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f093fb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f5576c;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="400" height="300" fill="url(#grad1)"/>
+  
+  <!-- Server icons -->
+  <rect x="50" y="80" width="60" height="40" rx="8" fill="#ffffff" opacity="0.9"/>
+  <rect x="50" y="140" width="60" height="40" rx="8" fill="#ffffff" opacity="0.9"/>
+  <rect x="50" y="200" width="60" height="40" rx="8" fill="#ffffff" opacity="0.9"/>
+  
+  <!-- Cache layer -->
+  <circle cx="200" cy="150" r="50" fill="url(#grad2)" opacity="0.8"/>
+  <circle cx="200" cy="150" r="30" fill="#ffffff" opacity="0.9"/>
+  
+  <!-- Database -->
+  <ellipse cx="320" cy="140" rx="40" ry="15" fill="#ffffff" opacity="0.9"/>
+  <rect x="280" y="140" width="80" height="30" fill="#ffffff" opacity="0.9"/>
+  <ellipse cx="320" cy="170" rx="40" ry="15" fill="#ffffff" opacity="0.9"/>
+  
+  <!-- Connection lines -->
+  <line x1="110" y1="100" x2="150" y2="130" stroke="#ffffff" stroke-width="3" opacity="0.7"/>
+  <line x1="110" y1="160" x2="150" y2="150" stroke="#ffffff" stroke-width="3" opacity="0.7"/>
+  <line x1="110" y1="220" x2="150" y2="170" stroke="#ffffff" stroke-width="3" opacity="0.7"/>
+  <line x1="250" y1="150" x2="280" y2="155" stroke="#ffffff" stroke-width="3" opacity="0.7"/>
+  
+  <!-- Cache text -->
+  <text x="200" y="155" text-anchor="middle" fill="#333" font-family="Arial, sans-serif" font-size="14" font-weight="bold">CACHE</text>
+  
+  <!-- Title -->
+  <text x="200" y="40" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="24" font-weight="bold">Cache Management</text>
+</svg>

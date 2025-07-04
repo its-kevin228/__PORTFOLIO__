@@ -1,4 +1,3 @@
-
 import About from "./components/About";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
@@ -9,18 +8,40 @@ import StatsSection from "./components/StatsSection";
 import ServicesSection from "./components/ServicesSection";
 import ContactSection from "./components/ContactSection";
 import ThemeToggle from "./components/ThemeToggle";
+import Loader from "./components/Loader";
 import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
 
 export default function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simuler le temps de chargement
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 3000); // 3 secondes de chargement
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (isLoading) {
+    return <Loader />;
+  }
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-base-100 via-base-200 to-base-300">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.8 }}
+      className="min-h-screen bg-gradient-to-br from-base-100 via-base-200 to-base-300"
+    >
       <Navbar />
       <ThemeToggle />
       
       <motion.main
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
         className="relative"
       >
         {/* Hero Section */}
@@ -60,6 +81,6 @@ export default function App() {
       </motion.main>
 
       <Footer />
-    </div>
+    </motion.div>
   )
 }

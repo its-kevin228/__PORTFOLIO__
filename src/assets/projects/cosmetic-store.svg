@@ -1,0 +1,55 @@
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="cosmeticGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffeef8;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#f8d7da;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f093fb;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="lipstickGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff6b6b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ee5a52;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="400" height="300" fill="url(#cosmeticGrad)"/>
+  
+  <!-- Lipstick -->
+  <rect x="120" y="120" width="15" height="60" rx="7" fill="#333"/>
+  <rect x="122" y="100" width="11" height="25" rx="5" fill="url(#lipstickGrad)"/>
+  
+  <!-- Perfume bottle -->
+  <rect x="180" y="140" width="20" height="40" rx="3" fill="#ffffff" opacity="0.9"/>
+  <rect x="185" y="135" width="10" height="10" rx="2" fill="#ffd700"/>
+  <circle cx="190" cy="130" r="3" fill="#ff69b4"/>
+  
+  <!-- Makeup palette -->
+  <ellipse cx="260" cy="160" rx="25" ry="15" fill="#ffffff" opacity="0.9"/>
+  <circle cx="250" cy="155" r="4" fill="#ff69b4"/>
+  <circle cx="260" cy="155" r="4" fill="#ffd700"/>
+  <circle cx="270" cy="155" r="4" fill="#ff6b6b"/>
+  <circle cx="250" cy="165" r="4" fill="#9b59b6"/>
+  <circle cx="260" cy="165" r="4" fill="#3498db"/>
+  <circle cx="270" cy="165" r="4" fill="#2ecc71"/>
+  
+  <!-- Brush -->
+  <rect x="320" y="100" width="4" height="50" fill="#8b4513"/>
+  <ellipse cx="322" cy="95" rx="6" ry="8" fill="#ddd"/>
+  
+  <!-- Shopping elements -->
+  <rect x="80" y="200" width="40" height="30" rx="5" fill="#ffffff" opacity="0.9"/>
+  <circle cx="85" cy="235" r="3" fill="#333"/>
+  <circle cx="115" cy="235" r="3" fill="#333"/>
+  <line x1="85" y1="205" x2="115" y2="205" stroke="#333" stroke-width="2"/>
+  <line x1="90" y1="210" x2="110" y2="210" stroke="#333" stroke-width="1"/>
+  <line x1="90" y1="215" x2="105" y2="215" stroke="#333" stroke-width="1"/>
+  
+  <!-- Stars decoration -->
+  <polygon points="350,80 352,85 357,85 353,88 355,93 350,90 345,93 347,88 343,85 348,85" fill="#ffd700"/>
+  <polygon points="70,90 71,93 74,93 72,95 73,98 70,96 67,98 68,95 66,93 69,93" fill="#ff69b4"/>
+  <polygon points="330,180 331,183 334,183 332,185 333,188 330,186 327,188 328,185 326,183 329,183" fill="#ff6b6b"/>
+  
+  <!-- Title -->
+  <text x="200" y="40" text-anchor="middle" fill="#8e44ad" font-family="Arial, sans-serif" font-size="24" font-weight="bold">Cosmetic Store</text>
+  <text x="200" y="60" text-anchor="middle" fill="#8e44ad" font-family="Arial, sans-serif" font-size="14">Beauty & Elegance</text>
+</svg>

@@ -23,8 +23,8 @@ const ContactSection = () => {
         {
             icon: Phone,
             title: "Téléphone",
-            value: "+228 XX XX XX XX",
-            link: "tel:+228XXXXXXXX",
+            value: "+228 93 15 88 01",
+            link: "tel:+22893158801",
             color: "from-green-500 to-emerald-500"
         },
         {
@@ -90,7 +90,7 @@ const ContactSection = () => {
     };
 
     return (
-        <section className="py-20 bg-gradient-to-br from-base-200 to-base-300 relative overflow-hidden">
+        <section id="ContactSection" className="py-20 bg-gradient-to-br from-base-200 to-base-300 relative overflow-hidden">
             {/* Background decorations */}
             <div className="absolute inset-0">
                 <motion.div

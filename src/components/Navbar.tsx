@@ -76,9 +76,9 @@ const Navbar = () => {
             initial={{ y: -100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ease-in-out ${
+            className={`fixed top-0 left-0 right-0 z-[9999] transition-all duration-700 ease-in-out ${
                 scrolling 
-                    ? "bg-base-100/90 backdrop-blur-xl shadow-2xl border-b border-accent/20" 
+                    ? "bg-base-100/95 backdrop-blur-xl shadow-2xl border-b border-accent/20" 
                     : "bg-transparent"
             }`}
         >
@@ -89,7 +89,7 @@ const Navbar = () => {
                 animate={{ opacity: scrolling ? 1 : 0 }}
                 transition={{ duration: 0.5 }}
             />
-            <div className="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
+            <div className="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto relative z-10">
                 {/* Logo */}
                 <motion.a
                     href="#Home"
@@ -204,7 +204,7 @@ const Navbar = () => {
 
                 {/* Bouton Menu Mobile */}
                 <motion.button
-                    className="md:hidden p-2 rounded-lg hover:bg-base-200 transition-colors duration-200"
+                    className="md:hidden p-3 rounded-lg hover:bg-base-200 transition-colors duration-200 relative z-20"
                     onClick={() => setIsMenuOpen(!isMenuOpen)}
                     whileTap={{ scale: 0.95 }}
                     aria-label={isMenuOpen ? "Fermer le menu" : "Ouvrir le menu"}
@@ -227,13 +227,13 @@ const Navbar = () => {
             <AnimatePresence>
                 {isMenuOpen && (
                     <motion.div
-                        className="md:hidden absolute top-full left-0 right-0 bg-base-100/95 backdrop-blur-md border-b border-base-300 shadow-xl"
+                        className="md:hidden absolute top-full left-0 right-0 bg-base-100/98 backdrop-blur-md border-b border-base-300 shadow-2xl z-[9998]"
                         initial="closed"
                         animate="open"
                         exit="closed"
                         variants={menuVariants}
                     >
-                        <ul className="px-6 py-4 space-y-2">
+                        <ul className="px-6 py-6 space-y-3">
                             {navItems.map((item, index) => (
                                 <motion.li 
                                     key={item.id}
@@ -247,14 +247,27 @@ const Navbar = () => {
                                             e.preventDefault();
                                             scrollToSection(item.id);
                                         }}
-                                        className={`flex items-center px-4 py-3 rounded-lg transition-all duration-200 cursor-pointer ${
+                                        className={`flex items-center px-4 py-4 rounded-xl transition-all duration-200 cursor-pointer ${
                                             activeSection === item.id
-                                                ? "text-accent bg-accent/10"
-                                                : "text-base-content hover:text-accent hover:bg-accent/5"
+                                                ? "text-accent bg-accent/15 border border-accent/30"
+                                                : "text-base-content hover:text-accent hover:bg-accent/10"
                                         }`}
                                     >
-                                        {item.icon}
-                                        <span className="font-medium">{item.label}</span>
+                                        <motion.div
+                                            whileHover={{ scale: 1.1, rotate: 5 }}
+                                            transition={{ type: "spring", stiffness: 400 }}
+                                        >
+                                            {item.icon}
+                                        </motion.div>
+                                        <span className="font-medium text-lg">{item.label}</span>
+                                        {activeSection === item.id && (
+                                            <motion.div
+                                                className="ml-auto w-2 h-2 bg-accent rounded-full"
+                                                initial={{ scale: 0 }}
+                                                animate={{ scale: 1 }}
+                                                transition={{ type: "spring", stiffness: 500 }}
+                                            />
+                                        )}
                                     </a>
                                 </motion.li>
                             ))}

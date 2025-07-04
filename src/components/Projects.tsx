@@ -3,23 +3,24 @@ import Title from "./Title";
 import { motion } from "framer-motion";
 import { Github, ExternalLink, Calendar, Star } from "lucide-react";
 
+import cacheSystemImg from '../assets/projects/cache-system.svg';
+import moneyMapImg from '../assets/projects/money-map.svg';
+import cosmeticStoreImg from '../assets/projects/cosmetic-store.svg';
+import autoMailImg from '../assets/projects/auto-mail.svg';
 import img1 from '../assets/projects/1.jpg';
 import img2 from '../assets/projects/2.jpg';
-import img3 from '../assets/projects/2.png';
-import img4 from '../assets/projects/4.jpg';
-import img5 from '../assets/projects/3.jpg';
-import img6 from '../assets/projects/5.jpg';
+import img3 from '../assets/projects/3.jpg';
 
 const projects = [
     {
         id: 1,
-        title: 'Gestionnaire de tâches',
-        description: 'Application complète pour organiser et suivre les tâches avec des fonctionnalités avancées de priorisation, rappels et collaboration en équipe.',
-        technologies: ['React', 'Node.js', 'Tailwind CSS', 'Firebase'],
-        repoLink: 'https://github.com/its-kevin228/TODO_APP-server_actions',
+        title: 'Système de Gestion de Cache',
+        description: 'Système avancé de mise en cache distribué avec gestion intelligente des données, optimisation des performances et monitoring en temps réel.',
+        technologies: ['Redis', 'Node.js', 'TypeScript', 'Docker'],
+        repoLink: 'https://github.com/its-kevin228/cache-management-system',
         liveLink: '#',
-        image: img1,
-        status: 'Terminé',
+        image: cacheSystemImg,
+        status: 'En développement',
         featured: true,
         year: '2024'
     },
@@ -30,55 +31,91 @@ const projects = [
         technologies: ['Next.js', 'TypeScript', 'Prisma', 'PostgreSQL'],
         repoLink: 'https://github.com/its-kevin228/MoneyMap',
         liveLink: '#',
-        image: img2,
+        image: moneyMapImg,
         status: 'En développement',
         featured: true,
         year: '2024'
     },
     {
         id: 3,
-        title: 'Portfolio interactif',
-        description: 'Portfolio moderne et responsive avec des animations fluides pour présenter mes projets et compétences de manière professionnelle.',
-        technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
-        repoLink: 'https://github.com/its-kevin228/__PORTFOLIO__',
+        title: 'Cosmetic - Boutique en ligne',
+        description: 'Site vitrine élégant pour boutique de cosmétiques avec catalogue produits, système de commande et interface d\'administration moderne.',
+        technologies: ['React', 'Tailwind CSS', 'Stripe', 'Firebase'],
+        repoLink: 'https://github.com/its-kevin228/cosmetic-store',
         liveLink: '#',
-        image: img3,
+        image: cosmeticStoreImg,
+        status: 'Terminé',
+        featured: true,
+        year: '2024'
+    },
+    {
+        id: 4,
+        title: 'Auto-Mail - Automatisation Email',
+        description: "Système d'automatisation d'emails avec templates personnalisables, planification avancée et analytics détaillés.",
+        technologies: ['Node.js', 'Express.js', 'MongoDB', 'Nodemailer'],
+        repoLink: 'https://github.com/its-kevin228/auto-mail-system',
+        liveLink: '#',
+        image: autoMailImg,
+        status: 'En développement',
+        featured: true,
+        year: '2024'
+    },
+    {
+        id: 5,
+        title: 'Gestionnaire de tâches',
+        description: 'Application complète pour organiser et suivre les tâches avec des fonctionnalités avancées de priorisation, rappels et collaboration en équipe.',
+        technologies: ['React', 'Node.js', 'Tailwind CSS', 'Firebase'],
+        repoLink: 'https://github.com/its-kevin228/TODO_APP-server_actions',
+        liveLink: '#',
+        image: img1,
         status: 'Terminé',
         featured: false,
         year: '2024'
     },
     {
-        id: 4,
+        id: 6,
+        title: 'Portfolio interactif',
+        description: 'Portfolio moderne et responsive avec des animations fluides pour présenter mes projets et compétences de manière professionnelle.',
+        technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
+        repoLink: 'https://github.com/its-kevin228/__PORTFOLIO__',
+        liveLink: '#',
+        image: img2,
+        status: 'Terminé',
+        featured: false,
+        year: '2024'
+    },
+    {
+        id: 7,
         title: 'Social Login System',
         description: "Système d'authentification social sécurisé permettant la connexion via différentes plateformes (Google, Facebook, GitHub).",
         technologies: ['Node.js', 'Passport.js', 'Express.js', 'OAuth'],
         repoLink: 'https://github.com/its-kevin228/BS_social-login',
         liveLink: '#',
-        image: img4,
+        image: img3,
         status: 'Terminé',
         featured: false,
         year: '2023'
     },
     {
-        id: 5,
+        id: 8,
         title: 'Application Météo',
         description: "Application météorologique moderne avec géolocalisation, prévisions détaillées et interface utilisateur intuitive.",
         technologies: ['HTML5', 'JavaScript', 'CSS3', 'Weather API'],
         repoLink: 'https://github.com/its-kevin228/weather_app',
         liveLink: '#',
-        image: img5,
+        image: img1,
         status: 'Terminé',
         featured: false,
         year: '2023'
     },
     {
-        id: 6,
+        id: 9,
         title: 'Quizzi - Plateforme de Quiz',
         description: "Plateforme interactive de quiz avec système de scoring, catégories multiples et tableau de classement en temps réel.",
         technologies: ['PHP', 'Tailwind CSS', 'MySQL', 'JavaScript'],
         repoLink: 'https://github.com/its-kevin228/Quizzi',
         liveLink: '#',
-        image: img6,
+        image: img2,
         status: 'Terminé',
         featured: false,
         year: '2023'
@@ -135,7 +172,7 @@ const Projects = () => {
                     </motion.h3>
                     
                     <div className="grid lg:grid-cols-2 gap-8">
-                        {featuredProjects.map((project,) => (
+                        {featuredProjects.map((project) => (
                             <motion.div
                                 key={project.id}
                                 variants={projectVariants}
