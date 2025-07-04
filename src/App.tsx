@@ -9,11 +9,14 @@ import ServicesSection from "./components/ServicesSection";
 import ContactSection from "./components/ContactSection";
 import ThemeToggle from "./components/ThemeToggle";
 import Loader from "./components/Loader";
+import DarkModeBackground from "./components/DarkModeBackground";
+import { useTheme } from "./hooks/useTheme";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
+  const isDark = useTheme();
 
   useEffect(() => {
     // Simuler le temps de chargement
@@ -33,54 +36,59 @@ export default function App() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
-      className="min-h-screen bg-gradient-to-br from-base-100 via-base-200 to-base-300"
+      className="min-h-screen bg-gradient-to-br from-base-100 via-base-200 to-base-300 relative"
     >
-      <Navbar />
-      <ThemeToggle />
+      {/* Enhanced background for dark mode */}
+      {isDark && <DarkModeBackground />}
       
-      <motion.main
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8, delay: 0.2 }}
-        className="relative"
-      >
-        {/* Hero Section */}
-        <section>
-          <Home />
-        </section>
+      <div className="relative z-10">
+        <Navbar />
+        <ThemeToggle />
+        
+        <motion.main
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="relative"
+        >
+          {/* Hero Section */}
+          <section>
+            <Home />
+          </section>
 
-        {/* Stats Section */}
-        <section>
-          <StatsSection />
-        </section>
+          {/* Stats Section */}
+          <section>
+            <StatsSection />
+          </section>
 
-        {/* About Section */}
-        <section>
-          <About />
-        </section>
+          {/* About Section */}
+          <section>
+            <About />
+          </section>
 
-        {/* Services Section */}
-        <section>
-          <ServicesSection />
-        </section>
+          {/* Services Section */}
+          <section>
+            <ServicesSection />
+          </section>
 
-        {/* Technologies Section */}
-        <section className="px-6 md:px-[10%] lg:px-[15%]">
-          <Technologies />
-        </section>
+          {/* Technologies Section */}
+          <section className="px-6 md:px-[10%] lg:px-[15%]">
+            <Technologies />
+          </section>
 
-        {/* Projects Section */}
-        <section className="px-6 md:px-[10%] lg:px-[15%]">
-          <Projects />
-        </section>
+          {/* Projects Section */}
+          <section className="px-6 md:px-[10%] lg:px-[15%]">
+            <Projects />
+          </section>
 
-        {/* Contact Section */}
-        <section>
-          <ContactSection />
-        </section>
-      </motion.main>
+          {/* Contact Section */}
+          <section>
+            <ContactSection />
+          </section>
+        </motion.main>
 
-      <Footer />
+        <Footer />
+      </div>
     </motion.div>
   )
 }
