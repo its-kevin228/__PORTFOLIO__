@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Linkedin, MonitorSmartphone, Youtube, Mail, MapPin, Phone, Heart } from "lucide-react";
+import { Facebook, Instagram, Linkedin, MonitorSmartphone, Youtube, Mail, MapPin, Phone, } from "lucide-react";
 import { motion } from "framer-motion";
 
 const Footer = () => {
@@ -247,20 +247,7 @@ const Footer = () => {
                         © {new Date().getFullYear()} Kevin PEKPELI. Tous droits réservés.
                     </p>
                     
-                    <motion.div 
-                        className="flex items-center text-sm text-base-content/60"
-                        whileHover={{ scale: 1.05 }}
-                    >
-                        <span>Fait avec</span>
-                        <motion.div
-                            animate={{ scale: [1, 1.2, 1] }}
-                            transition={{ duration: 1, repeat: Infinity }}
-                            className="mx-1"
-                        >
-                            <Heart className="w-4 h-4 text-red-500 fill-current" />
-                        </motion.div>
-                        <span>et React</span>
-                    </motion.div>
+
                 </motion.div>
             </div>
         </footer>

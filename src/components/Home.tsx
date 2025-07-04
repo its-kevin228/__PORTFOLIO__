@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
- 
+
 import { Mail, Download, Sparkles, ArrowDown, ExternalLink, Github, Linkedin } from "lucide-react";
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
@@ -14,7 +14,7 @@ const Home = () => {
 
     const roles = [
         "Développeur Full-Stack",
-        "Développeur Frontend", 
+        "Développeur Frontend",
         "Développeur Backend",
         "Développeur Mobile"
     ];
@@ -64,8 +64,8 @@ const Home = () => {
     };
 
     return (
-        <motion.section 
-            id="Home" 
+        <motion.section
+            id="Home"
             className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-base-100 via-base-200/50 to-base-300/30"
             variants={containerVariants}
             initial="hidden"
@@ -132,7 +132,7 @@ const Home = () => {
             <div className="container mx-auto px-6 relative z-10">
                 <div className="grid lg:grid-cols-2 gap-12 items-center min-h-screen py-20">
                     {/* Content Section */}
-                    <motion.div 
+                    <motion.div
                         className="space-y-8 text-center lg:text-left"
                         style={{ y: y1 }}
                     >
@@ -146,8 +146,8 @@ const Home = () => {
                                 <Sparkles className="w-4 h-4" />
                                 <span>Disponible pour de nouveaux projets</span>
                             </motion.div>
-                            
-                            <motion.p 
+
+                            <motion.p
                                 className="text-lg text-base-content/70"
                                 initial={{ opacity: 0, x: -20 }}
                                 animate={{ opacity: 1, x: 0 }}
@@ -159,13 +159,13 @@ const Home = () => {
 
                         {/* Main Title */}
                         <motion.div variants={itemVariants} className="space-y-4">
-                            <motion.h1 
+                            <motion.h1
                                 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight"
                                 initial={{ opacity: 0, y: 50 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.8, delay: 0.5 }}
                             >
-                                <motion.span 
+                                <motion.span
                                     className="block bg-gradient-to-r from-accent via-primary to-accent bg-clip-text text-transparent font-black"
                                     animate={{
                                         backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
@@ -202,20 +202,19 @@ const Home = () => {
 
                         {/* Description */}
                         <motion.div variants={itemVariants} className="space-y-6">
-                            <motion.p 
+                            <motion.p
                                 className="text-lg md:text-xl text-base-content/80 leading-relaxed max-w-2xl mx-auto lg:mx-0"
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                                 transition={{ duration: 0.8, delay: 1 }}
                             >
-                                Étudiant passionné en 2ème année à l'<span className="text-accent font-semibold">IAI-TOGO</span>, 
-                                je transforme des idées en solutions numériques innovantes. Expert en développement 
-                                <span className="text-accent font-semibold"> web moderne</span> et 
-                                <span className="text-accent font-semibold"> applications mobiles</span>.
+                                Étudiant à l'<span className="text-accent font-semibold">IAI-TOGO</span>, je conçois des applications web et mobiles performantes, alliant design moderne et technologies robustes. Spécialisé en
+                                <span className="text-accent font-semibold"> développement fullstack</span>, je donne vie aux idées à travers des interfaces intuitives et des architectures solides.
+
                             </motion.p>
 
                             {/* Tech Stack Preview */}
-                            <motion.div 
+                            <motion.div
                                 className="flex flex-wrap gap-3 justify-center lg:justify-start"
                                 variants={itemVariants}
                             >
@@ -235,12 +234,12 @@ const Home = () => {
                         </motion.div>
 
                         {/* CTA Buttons */}
-                        <motion.div 
+                        <motion.div
                             variants={itemVariants}
                             className="flex flex-col sm:flex-row gap-4 items-center justify-center lg:justify-start"
                         >
-                            <motion.a 
-                                href="mailto:pekpelignimdoukevin@gmail.com" 
+                            <motion.a
+                                href="mailto:pekpelignimdoukevin@gmail.com"
                                 className="group relative px-8 py-4 bg-accent text-accent-content rounded-xl font-semibold shadow-lg overflow-hidden"
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
@@ -256,8 +255,8 @@ const Home = () => {
                                     Collaborons ensemble
                                 </span>
                             </motion.a>
-                            
-                            <motion.button 
+
+                            <motion.button
                                 className="group px-8 py-4 border-2 border-accent text-accent rounded-xl font-semibold hover:bg-accent hover:text-accent-content transition-all duration-300"
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
@@ -270,7 +269,7 @@ const Home = () => {
                         </motion.div>
 
                         {/* Social Links */}
-                        <motion.div 
+                        <motion.div
                             variants={itemVariants}
                             className="flex gap-4 items-center justify-center lg:justify-start pt-4"
                         >
@@ -298,7 +297,7 @@ const Home = () => {
                     </motion.div>
 
                     {/* Image Section */}
-                    <motion.div 
+                    <motion.div
                         className="relative flex justify-center lg:justify-end"
                         style={{ y: y2 }}
                         variants={itemVariants}
@@ -333,27 +332,27 @@ const Home = () => {
                                     ease: "easeInOut"
                                 }}
                             />
-                            
+
                             {/* Main image */}
                             <motion.div
                                 className="relative w-80 h-80 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem] rounded-full overflow-hidden border-4 border-accent/30 shadow-2xl"
                                 variants={floatingVariants}
                                 animate="animate"
-                                whileHover={{ 
+                                whileHover={{
                                     scale: 1.05,
                                     rotate: 5,
                                     transition: { duration: 0.3 }
                                 }}
                             >
-                                <motion.img 
-                                    src={img} 
-                                    alt="Kevin Pekpeli - Développeur Full-Stack" 
+                                <motion.img
+                                    src={img}
+                                    alt="Kevin Pekpeli - Développeur Full-Stack"
                                     className="w-full h-full object-cover"
                                     initial={{ scale: 1.2 }}
                                     animate={{ scale: 1 }}
                                     transition={{ duration: 1 }}
                                 />
-                                
+
                                 {/* Overlay gradient */}
                                 <div className="absolute inset-0 bg-gradient-to-t from-accent/20 to-transparent" />
                             </motion.div>
@@ -370,10 +369,10 @@ const Home = () => {
                                     className={`absolute ${position} w-12 h-12 bg-base-100 rounded-full flex items-center justify-center text-xl shadow-lg border border-accent/20`}
                                     initial={{ scale: 0, rotate: -180 }}
                                     animate={{ scale: 1, rotate: 0 }}
-                                    transition={{ 
+                                    transition={{
                                         delay: 2 + delay * 0.2,
                                         type: "spring",
-                                        stiffness: 200 
+                                        stiffness: 200
                                     }}
                                     whileHover={{ scale: 1.2, rotate: 10 }}
                                 >
@@ -385,7 +384,7 @@ const Home = () => {
                 </div>
 
                 {/* Scroll indicator */}
-                <motion.div 
+                <motion.div
                     className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
